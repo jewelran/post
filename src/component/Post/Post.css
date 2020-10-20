@@ -1,0 +1,8 @@
+.Card-container{
+    float: left;
+    width: 30%;
+    margin : 2rem auto;
+    
+    margin-left: 2rem;
+    background:rgb(175, 175, 175) !important;
+}
