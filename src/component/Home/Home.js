@@ -1,28 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import Post from '../Post/Post';
+import PostDetail from '../PostDetail/PostDetail';
+import User from '../User/User';
 
 const Home = () => {
     const [users, setUsers] = useState([]) 
 
-
     useEffect( () => {
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('https://jsonplaceholder.typicode.com/posts/')
         .then(res => res.json())
         .then(data => setUsers(data));
     },[]);
-  
+    const [photo,setPhoto] = useState([])
 
-  console.log(users)
+  useEffect(() => {
+    const url = 'https://randomuser.me/api/?page=3&results=100&seed=abc'
+    fetch(url)
+    .then(res => res.json())
+    .then(data =>setPhoto(data.results))
+  } ,[])
+
+  console.log(photo)
     return (
         <div>
             <h3>total:{users.length}</h3>
-            {
-                users.map(users => <Post user ={users}>
-                   
-                </Post>)
-            }
-          
          
+            {
+                users.map(user => <User users = {user}></User>)
+            }
+        <h3>photo:{photo.length}</h3>
+            {
+                photo.map(photo => <PostDetail photo = {photo}></PostDetail>)
+            }
         </div>
     );
 };

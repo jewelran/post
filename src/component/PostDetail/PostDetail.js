@@ -1,10 +1,10 @@
 import React from 'react';
 
-const PostDetail = () => {
+const PostDetail = (props) => {
+    const {picture} = props.photo
     return (
         <div>
-            <h1> hi i am jewel rana</h1>
-        <h2> id : </h2>
+        <img src={picture.large} alt=""/>
            
         </div>
     );
