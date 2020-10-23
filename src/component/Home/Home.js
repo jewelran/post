@@ -19,7 +19,7 @@ const Home = () => {
     .then(data =>setPhoto(data.results))
   } ,[])
 
-  console.log(photo)
+//   console.log(photo)
     return (
         <div>
             <h3>total:{users.length}</h3>
@@ -28,9 +28,14 @@ const Home = () => {
                 users.map(user => <User users = {user}></User>)
             }
         <h3>photo:{photo.length}</h3>
+ 
             {
-                photo.map(photo => <PostDetail photo = {photo}></PostDetail>)
+                photo.map( photo => <PostDetail photos = {photo}></PostDetail>)
+
             }
+          
+
+        
         </div>
     );
 };

@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from '@material-ui/core';
+import PostDetail from '../PostDetail/PostDetail';
 const useStyles = makeStyles({
     root: {
       maxWidth: 345,
@@ -20,9 +21,7 @@ const useStyles = makeStyles({
 
 const User = (props) => {
    const {id, title,body} =  props.users
-console.log(props)
 const classes = useStyles();
-
     return (
         // <div>
         //     <h3>Name: {name}</h3>
@@ -32,11 +31,13 @@ const classes = useStyles();
         <Card className={classes.root} className="Card-container">
         <CardActionArea>
           <CardMedia
+          
             className={classes.media}
             image="/static/images/cards/contemplative-reptile.jpg"
             title="Contemplative Reptile"
           />
           <CardContent>
+            
             <Typography gutterBottom variant="h5" component="h2">
             <h3>id:{id}</h3>
             <h4>Title: {title}</h4>
@@ -55,6 +56,7 @@ const classes = useStyles();
           </Button></Link>
          
         </CardActions>
+
        
       </Card>
     );

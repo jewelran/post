@@ -1,11 +1,11 @@
 import React from 'react';
 
 const PostDetail = (props) => {
-    const {picture} = props.photo
+    const {picture} =props.photos
+    console.log(props)
     return (
         <div>
-        <img src={picture.large} alt=""/>
-           
+           <img src={picture.large}/>
         </div>
     );
 };
