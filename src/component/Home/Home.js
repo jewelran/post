@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import PostDetail from '../PostDetail/PostDetail';
-import User from '../User/User';
+import AllPost from '../AllPost/AllPost';
 import data from '../Data/data.json'
 const Home = () => {
     const [users, setUsers] = useState([]) 
@@ -31,7 +30,7 @@ const Home = () => {
             <h2 style={{color:"orange", textAlign:"center", fontSize:"30px"}}>All Post</h2>
             <h3  style={{color:"orange", textAlign:"center", fontSize:"20px"}}>total:{users.length}</h3>
             {
-                users.map(user => <User users = {user}  datailHandle = {datailHandle}></User>)
+                users.map(user => <AllPost users = {user}  datailHandle = {datailHandle}></AllPost>)
             }
         {/* <h3>photo:{photo.length}</h3> */}
  
