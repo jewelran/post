@@ -1,39 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import PostDetail from '../PostDetail/PostDetail';
 import User from '../User/User';
-
+import data from '../Data/data.json'
 const Home = () => {
     const [users, setUsers] = useState([]) 
 
     useEffect( () => {
-        fetch('https://jsonplaceholder.typicode.com/posts/')
-        .then(res => res.json())
-        .then(data => setUsers(data));
+        // fetch('https://jsonplaceholder.typicode.com/posts/')
+        // .then(res => res.json())
+        // .then(data => setUsers(data));
+        setUsers(data)
+        
     },[]);
-    const [photo,setPhoto] = useState([])
+    const [post, setPost] = useState([])
+    const datailHandle = () => {
+        console.log(post)
+    }
+    // const [photo,setPhoto] = useState([])
 
-  useEffect(() => {
-    const url = 'https://randomuser.me/api/?page=3&results=100&seed=abc'
-    fetch(url)
-    .then(res => res.json())
-    .then(data =>setPhoto(data.results))
-  } ,[])
+//   useEffect(() => {
+//     const url = 'https://randomuser.me/api/?page=3&results=100&seed=abc'
+//     fetch(url)
+//     .then(res => res.json())
+//     .then(data =>setPhoto(data.results))
+//   } ,[])
 
 //   console.log(photo)
     return (
         <div>
-            <h3>total:{users.length}</h3>
-         
+            <h2 style={{color:"orange", textAlign:"center", fontSize:"30px"}}>All Post</h2>
+            <h3  style={{color:"orange", textAlign:"center", fontSize:"20px"}}>total:{users.length}</h3>
             {
-                users.map(user => <User users = {user}></User>)
+                users.map(user => <User users = {user}  datailHandle = {datailHandle}></User>)
             }
-        <h3>photo:{photo.length}</h3>
+        {/* <h3>photo:{photo.length}</h3> */}
  
-            {
+            {/* {
                 photo.map( photo => <PostDetail photos = {photo}></PostDetail>)
 
-            }
-          
+            } */}
+        
 
         
         </div>

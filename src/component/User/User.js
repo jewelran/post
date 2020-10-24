@@ -5,11 +5,10 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link } from '@material-ui/core';
-import PostDetail from '../PostDetail/PostDetail';
+// import { Link } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
     root: {
       maxWidth: 345,
@@ -20,26 +19,19 @@ const useStyles = makeStyles({
   });
 
 const User = (props) => {
-   const {id, title,body} =  props.users
-const classes = useStyles();
+   const {id, title,body,img} =  props.users
+
     return (
         // <div>
         //     <h3>Name: {name}</h3>
         //     <h3>id:{id}</h3>
         //     <h1>hi i am jewel rana</h1>
         // </div>
-        <Card className={classes.root} className="Card-container">
+        <Card  className="Card-container">
         <CardActionArea>
-          <CardMedia
-          
-            className={classes.media}
-            image="/static/images/cards/contemplative-reptile.jpg"
-            title="Contemplative Reptile"
-          />
           <CardContent>
-            
             <Typography gutterBottom variant="h5" component="h2">
-            <h3>id:{id}</h3>
+            <img className= "img" src={img} alt=""/>
             <h4>Title: {title}</h4>
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
@@ -48,16 +40,15 @@ const classes = useStyles();
           </CardContent>
         </CardActionArea>
         <CardActions>
+          <Link onClick= {() => props.datailHandle(id) } className="link" to ="/PostDetail">
           <Button variant="contained" color="secondary">
-            Details
+            learn more
           </Button>
-          <Link to="/post"> <Button variant="contained" color="primary">
-            Learn More
-          </Button></Link>
+          </Link>
+          
+         
          
         </CardActions>
-
-       
       </Card>
     );
 };

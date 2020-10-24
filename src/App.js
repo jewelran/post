@@ -7,18 +7,28 @@ import {
   Link
 } from "react-router-dom";
 import Home from './component/Home/Home';
+import PostDetail from './component/PostDetail/PostDetail';
+import NotFound from './component/NotFound/NotFound';
+import Post from './component/Post/Post';
 
 function App() {
   
   return (
     <div>
-      <h3>All Post</h3>
       <Router>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home></Home>
           </Route>
-         
+          <Route  path="/Home">
+            <Home></Home>
+          </Route>
+         <Route path ="/PostDetail">
+           <PostDetail></PostDetail>
+         </Route>
+         <Route path ="*">
+          <NotFound></NotFound>
+         </Route>
         </Switch>
       </Router>
     </div>
