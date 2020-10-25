@@ -22,7 +22,7 @@ function App() {
           <Route path="/Home">
             <Home></Home>
           </Route>
-          <Route path="/PostDetail">
+          <Route path="/PostDetail/:PostId">
             <PostDetail></PostDetail>
           </Route>
           <Route path="*">

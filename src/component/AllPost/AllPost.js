@@ -40,14 +40,11 @@ const User = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Link onClick={() => props.datailHandle(id)} className="link" to="/PostDetail">
+        <Link onClick={() => props.datailHandle()} className="link" to={"/PostDetail/"+id}>
           <Button variant="contained" color="secondary">
             learn more
           </Button>
         </Link>
-
-
-
       </CardActions>
     </Card>
   );

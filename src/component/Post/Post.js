@@ -10,7 +10,7 @@ const Post = (props) => {
             <h1>id:{id}</h1>
             <h3>title:{title}</h3>
             <p>comment:{body}</p>
-            <Link to="/Home">  <button style={{ border:"none",color: "white", padding: "8px 20px", outline: "none", borderRadius: "8px", background: "orange" }} variant="contained" color="secondary">
+            <Link to="/Home">  <button style={{cursor:"pointer" , border:"none",color: "white", padding: "8px 20px", outline: "none", borderRadius: "8px", background: "orange" }} variant="contained" color="secondary">
                 Home
           </button></Link>
 
